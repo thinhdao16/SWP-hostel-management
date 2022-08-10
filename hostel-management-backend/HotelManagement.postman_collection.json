@@ -1,0 +1,1964 @@
+{
+	"info": {
+		"_postman_id": "741ab61c-0b2c-4928-874c-640959333b17",
+		"name": "HotelManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18954770"
+	},
+	"item": [
+		{
+			"name": "Room",
+			"item": [
+				{
+					"name": "searchRoom",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoom",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n         \"id\": 2,\r\n        \"name\": \"104\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"startTime\": \"2022-07-01\",\r\n        \"finishTime\": \"2022-09-01\",\r\n        \"price\": 800.0,\r\n        \"status\": true,\r\n        \"fk_roomcategory\": null,\r\n        \"fk_roomstatus\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"finishTime\" :\"2022-09-01\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"name\": \"104\",\r\n        \"price\": \"500.000\",\r\n        \"startTime\" :\"2022-07-01\",\r\n        \"status\":\"true\",\r\n        \"roomCategory\": null,\r\n        \"fk_roomstatus\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRoomCategorybyID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{       \"id\": 2,\r\n        \"name\": \"104\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"startTime\": \"2022-07-01\",\r\n        \"finishTime\": \"2022-09-01\",\r\n        \"price\": 800.0,\r\n        \"status\": true,\r\n        \"roomCategory\": {\r\n         \"id\": 1,\r\n        \"name\": \"Deluxe\",\r\n        \"price\": 800.0,\r\n        \"status\": true\r\n    },\r\n        \"roomStatus\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/update/2/roomcategory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"update",
+								"2",
+								"roomcategory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Room_category",
+			"item": [
+				{
+					"name": "CreateCategoryRoom",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Deluxy\",\r\n        \"description\":null,\r\n        \"image\":null,\r\n        \"people\":2,\r\n        \"price\": 800.000,\r\n        \"quantity\":10,\r\n        \"slug\":null,\r\n        \"status\": \"true\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomcategory/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomcategory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchCategoryRoom",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomcategory/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomcategory",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategoryRoom",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n       \r\n        \"name\": \"Vip\",\r\n        \"price\": 500,\r\n        \"status\": false\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomcategory/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomcategory",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategoryRoom",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomcategory/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomcategory",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service_Category",
+			"item": [
+				{
+					"name": "CreateService_Cate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Food\",\r\n    \"status\": true\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicecategory/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicecategory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchService_Cate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomcategory/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomcategory",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateService_Cate",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicecategory/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicecategory",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteService_Cate",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicecategory/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicecategory",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "createBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookingTime\":\"2022-17-07\",\r\n        \"note\":null,\r\n        \"people\":2,\r\n        \"prepayment\":500.000,\r\n         \"price\": \"500.000\",\r\n        \"quantity\":1,\r\n        \"surcharge\": null,\r\n        \"fk_account\":null,\r\n        \"fk_bookingstatus\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/user/create/roomCategory/{cate_id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"user",
+								"create",
+								"roomCategory",
+								"{cate_id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBooking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/updatebooking/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"updatebooking",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccountForBookingByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/update/1/account/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"update",
+								"1",
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchBooking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookingAdmin",
+			"item": [
+				{
+					"name": "createBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookingTime\":\"2022-17-07\",\r\n        \"note\":null,\r\n        \"people\":2,\r\n        \"prepayment\":500.000,\r\n         \"price\": \"500.000\",\r\n        \"quantity\":1,\r\n        \"surcharge\": null,\r\n        \"fk_account\":null,\r\n        \"fk_bookingstatus\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/user/create/roomCategory/{cate_id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"user",
+								"create",
+								"roomCategory",
+								"{cate_id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBooking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/updatebooking/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"updatebooking",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccountForBookingByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/update/1/account/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"update",
+								"1",
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchBooking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "topay",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookingStatus",
+			"item": [
+				{
+					"name": "createBooking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"bookingTime\":\"2022-17-07\",\r\n        \"note\":null,\r\n        \"people\":2,\r\n        \"prepayment\":500.000,\r\n         \"price\": \"500.000\",\r\n        \"quantity\":1,\r\n        \"surcharge\": null,\r\n        \"fk_account\":null,\r\n        \"fk_bookingstatus\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/user/create/roomCategory/{cate_id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"user",
+								"create",
+								"roomCategory",
+								"{cate_id}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBooking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/updatebooking/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"updatebooking",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccountForBookingByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":3,\r\n         \"CheckInTime\":\"2022-08-01\",\r\n        \"accountID\": 1,\r\n        \"bookingTime\":\"2022-08-01\",\r\n        \"checkOutTime\":\"2022-09-02\",\r\n         \"prepayment\":null,\r\n        \"surcharge\": null,\r\n        \"price\": \"500.000\",\r\n        \"status\":\"true\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/update/1/account/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"update",
+								"1",
+								"account",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/booking/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"booking",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchBooking",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Service",
+			"item": [
+				{
+					"name": "createService",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sting\",\r\n    \"img\": \"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg\",\r\n    \"price\": 1000.000,\r\n    \"quantity\": 1,\r\n    \"status\": true,\r\n    \"serviceCategory\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/service/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"service",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateService",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Sting\",\r\n    \"img\": \"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg\",\r\n    \"price\": 1000.000,\r\n    \"quantity\": 1,\r\n    \"status\": true,\r\n    \"fk_service_cate\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/service/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"service",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateServiceID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"StingX\",\r\n    \"img\": \"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg\",\r\n    \"price\": 10.000,\r\n    \"quantity\": 70,\r\n    \"status\": true,\r\n    \"serviceCategory\": {\r\n        \"id\": 2,\r\n        \"name\": \"Water\",\r\n        \"status\": true\r\n    }\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/service/update/3/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"service",
+								"update",
+								"3",
+								"category",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteService",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/service/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"service",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchService",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/service/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"service",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ServiceDetail",
+			"item": [
+				{
+					"name": "createServiceDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\": 2,\r\n    \"total\": 50.000,\r\n    \"status\": true,\r\n    \"service\": null,\r\n    \"bookinDetail\":null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateServiceDetail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"id\": 2,\r\n        \"quantity\": 4,\r\n        \"total\": 100.0,\r\n        \"status\": true,\r\n        \"fk_service\": null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"update",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateServiceByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n         \"id\": 1,\r\n        \"quantity\": 2,\r\n        \"total\": 50.0,\r\n        \"status\": true,\r\n        \"service\": {\r\n            \"id\": 1,\r\n            \"name\": \"Sting\",\r\n            \"img\": \"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg\",\r\n            \"price\": 1000.0,\r\n            \"quantity\": 10,\r\n            \"status\": true,\r\n            \"serviceCategory\": {\r\n            \"id\": 1,\r\n            \"name\": \"Food\",\r\n            \"status\": true\r\n            },\r\n        \"serviceDetails\": []\r\n        },\r\n        \"fk_booking_detail\":null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/update/1/service/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"update",
+								"1",
+								"service",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBookingDetailByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n         \"id\": 1,\r\n        \"quantity\": 2,\r\n        \"total\": 50.0,\r\n        \"status\": true,\r\n        \"service\": {\r\n            \"id\": 1,\r\n            \"name\": \"Sting\",\r\n            \"img\": \"https://cdn.tgdd.vn/Products/Images/3226/76520/bhx/nuoc-tang-luc-sting-huong-dau-330ml-201909031559004919.jpg\",\r\n            \"price\": 1000.0,\r\n            \"quantity\": 10,\r\n            \"status\": true,\r\n            \"serviceCategory\": {\r\n            \"id\": 1,\r\n            \"name\": \"Food\",\r\n            \"status\": true\r\n            },\r\n        \"serviceDetails\": []\r\n        },\r\n        \"fk_booking_detail\":null\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/update/1/service/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"update",
+								"1",
+								"service",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteServiceDetail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchServiceDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/servicedetail/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"servicedetail",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookingDetail",
+			"item": [
+				{
+					"name": "deleteBookingDetail",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchBookingDetail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBookingDetail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"checkInTime\":\"2022-08-01\",\r\n        \"bookingID\": 1,\r\n        \"bookingTime\":\"2022-07-01\",\r\n        \"name\": \"104R\",\r\n        \"price\": \"500.000\",\r\n        \"checkOutTime\" :\"2022-09-01\",\r\n        \"roomID\":1,\r\n        \"status\":\"true\",\r\n        \"total\": 900,\r\n        \"totalRoom\": 500,\r\n        \"totalService\": 400\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBookingDetail",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"finishTime\" :\"2022-08-01\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"name\": \"104R\",\r\n        \"price\": \"500.000\",\r\n        \"startTime\" :\"2022-08-01\",\r\n        \"status\":\"true\",\r\n        \"roomCategory\": {\r\n            \"id\":14,\r\n            \"name\": \"Deluxe\",\r\n            \"price\": \"500.000\",\r\n            \"status\": \"true\"\r\n        },\r\n        \"roomStatusID\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail/update/20",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"update",
+								"20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateBookingForBookingDetailByID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"finishTime\" :\"2022-08-01\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"name\": \"104R\",\r\n        \"price\": \"500.000\",\r\n        \"startTime\" :\"2022-08-01\",\r\n        \"status\":\"true\",\r\n        \"roomCategory\": {\r\n            \"id\":14,\r\n            \"name\": \"Deluxe\",\r\n            \"price\": \"500.000\",\r\n            \"status\": \"true\"\r\n        },\r\n        \"roomStatusID\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail/update/{id}/booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"update",
+								"{id}",
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoomForBookingDetailByID Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"totalService\": 0.0,\r\n        \"totalRoom\": 0.0,\r\n        \"total\": 0.0,\r\n        \"checkOutTime\": \"2022-07-18\",\r\n        \"checkInTime\": \"2022-07-17\",\r\n        \"status\": true,\r\n        \"booking\": {\r\n            \"id\": 1,\r\n            \"bookingTime\": \"2022-07-17T12:23:03+07:00\",\r\n            \"note\": \"\",\r\n            \"price\": 0.0,\r\n            \"surcharge\": 0.0,\r\n            \"prepayment\": 0.0,\r\n            \"people\": 2,\r\n            \"quantity\": 0,\r\n            \"account\": {\r\n                \"id\": 1,\r\n                \"email\": \"phuocthanh20cgh@gmail.com\",\r\n                \"phone\": \"0933391614\",\r\n                \"password\": \"$2a$10$hsxm03dtavbfGMaI7/nOC.IPS01rEH9dQiMjhmRHW1ri1Mki3Nh2i\",\r\n                \"role\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"user\",\r\n                    \"status\": true\r\n                },\r\n                \"profile\": {\r\n                    \"id\": 1,\r\n                    \"fullName\": \"Vo Phuoc Thanh\",\r\n                    \"dob\": \"16-04-2001\",\r\n                    \"cardNumber\": \"null\",\r\n                    \"picture\": null\r\n                }\r\n            },\r\n            \"bookingStatus\": {\r\n                \"id\": 1,\r\n                \"name\": \"Waiting\",\r\n                \"status\": true\r\n            }\r\n        },\r\n        \"room\": null,\r\n        \"roomCategory\": {\r\n            \"id\": 1,\r\n            \"name\": \"Deluxy\",\r\n            \"slug\": \"deluxy\",\r\n            \"image\": null,\r\n            \"description\": null,\r\n            \"price\": 800.0,\r\n            \"people\": 2,\r\n            \"quantity\": 10,\r\n            \"status\": true\r\n        }\r\n    },\r\n    {\r\n        \"id\": 2,\r\n        \"totalService\": 0.0,\r\n        \"totalRoom\": 0.0,\r\n        \"total\": 0.0,\r\n        \"checkOutTime\": \"2022-07-18\",\r\n        \"checkInTime\": \"2022-07-17\",\r\n        \"status\": true,\r\n        \"booking\": {\r\n            \"id\": 2,\r\n            \"bookingTime\": \"2022-07-17T12:23:03+07:00\",\r\n            \"note\": \"\",\r\n            \"price\": 0.0,\r\n            \"surcharge\": 0.0,\r\n            \"prepayment\": 0.0,\r\n            \"people\": 2,\r\n            \"quantity\": 0,\r\n            \"account\": {\r\n                \"id\": 1,\r\n                \"email\": \"phuocthanh20cgh@gmail.com\",\r\n                \"phone\": \"0933391614\",\r\n                \"password\": \"$2a$10$hsxm03dtavbfGMaI7/nOC.IPS01rEH9dQiMjhmRHW1ri1Mki3Nh2i\",\r\n                \"role\": {\r\n                    \"id\": 1,\r\n                    \"name\": \"user\",\r\n                    \"status\": true\r\n                },\r\n                \"profile\": {\r\n                    \"id\": 1,\r\n                    \"fullName\": \"Vo Phuoc Thanh\",\r\n                    \"dob\": \"16-04-2001\",\r\n                    \"cardNumber\": \"null\",\r\n                    \"picture\": null\r\n                }\r\n            },\r\n            \"bookingStatus\": {\r\n                \"id\": 1,\r\n                \"name\": \"Waiting\",\r\n                \"status\": true\r\n            }\r\n        },\r\n        \"room\": null,\r\n        \"roomCategory\": {\r\n            \"id\": 1,\r\n            \"name\": \"Deluxy\",\r\n            \"slug\": \"deluxy\",\r\n            \"image\": null,\r\n            \"description\": null,\r\n            \"price\": 800.0,\r\n            \"people\": 2,\r\n            \"quantity\": 10,\r\n            \"status\": true\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/bookingdetail//update/1/room/{room_id}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"bookingdetail",
+								"",
+								"update",
+								"1",
+								"room",
+								"{room_id}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "searchAccount",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/id/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchAccountByEmail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"Adminlogin@gmail.com\",\r\n        \"phone\": \"null\",\r\n        \"password\": \"1\",\r\n        \"roleID\": null,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Ba Quoc\",\r\n            \"dob\": \"21-06-2022\",\r\n            \"cardNumber\": \"null\"\r\n        }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createAccountAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"Adminlogin@gmail.com\",\r\n        \"phone\": \"null\",\r\n        \"password\": \"1\",\r\n        \"roleID\": null,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Ba Quoc\",\r\n            \"dob\": \"21-06-2022\",\r\n            \"cardNumber\": \"null\"\r\n        }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n         \"roleID\": {\r\n             \"id\": 1,\r\n            \"name\": \"user\",\r\n            \"status\":\"true\"\r\n        },\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoleForAccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/update/1/role/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"update",
+								"1",
+								"role",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAccount",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/account/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"account",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RoomStatus",
+			"item": [
+				{
+					"name": "searchRoomStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomstatus/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomstatus",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRoomStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\":1,\r\n        \"name\" :\"Booking\",\r\n        \"status\":\"false\"\r\n       \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomstatus/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomstatus",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRoomStatus",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomstatus/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomstatus",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRoomStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\" :\"Valiable\",\r\n        \"status\":\"true\"\r\n       \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/roomstatus/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"roomstatus",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateRoomStatusbyID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/updatev/2/roomstatus/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"updatev",
+								"2",
+								"roomstatus",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "UpdateRole",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"103R\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"startTime\": \"2022-07-01\",\r\n        \"finishTime\": \"2022-08-01\",\r\n        \"price\": 300.0,\r\n        \"status\": true,\r\n        \"roomStatusID\": 1,\r\n        \"roomCategory\": { \r\n        \"id\": 1,\r\n        \"name\": \"Standard\",\r\n        \"price\": 300.0,\r\n        \"status\": true\r\n    \r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/update/1/roomCategory/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"update",
+								"1",
+								"roomCategory",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteRole",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createRole",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\" :\"user\",\r\n      \r\n        \"status\":\"true\",\r\n      \r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/role/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "searchRole",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		},
+		{
+			"name": "Slot",
+			"item": [
+				{
+					"name": "searchSlot",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/room/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"room",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createSlot",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\" :\"user\",\r\n      \r\n        \"status\":\"true\",\r\n      \r\n        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/role/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteSlot",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"email\": \"quochbcontact@gmail.com\",\r\n        \"phone\": \"0357280613\",\r\n        \"password\": \"123456\",\r\n        \"roleID\": 1,\r\n        \"profile\": {\r\n            \"fullName\": \"Huynh Quoc\",\r\n            \"dob\": \"30-11-2001\",\r\n            \"cardNumber\": \"1154545541\"\r\n        },\r\n        \"status\":1,\r\n        \"createTime\" :2022-06-09 00:00:00\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8181/slot/delete/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"slot",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateSlot",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"id\": 1,\r\n        \"name\": \"103R\",\r\n        \"img\": \"https://parisdelihotel.com/uploads/article/item-1uwlkd8s9l1e955w-793-seafront-premier.jpg\",\r\n        \"startTime\": \"2022-07-01\",\r\n        \"finishTime\": \"2022-08-01\",\r\n        \"price\": 300.0,\r\n        \"status\": true,\r\n        \"roomStatusID\": 1,\r\n        \"roomCategory\": { \r\n        \"id\": 1,\r\n        \"name\": \"Standard\",\r\n        \"price\": 300.0,\r\n        \"status\": true\r\n    \r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8181/slot/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8181",
+							"path": [
+								"slot",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
